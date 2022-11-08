@@ -11,12 +11,13 @@ import { SymbolssComponentModule } from './components/symbolss/symbolss.componen
 import { SymbolsServiceModule } from './services/symbols.service-module';
 import { PublicHolidaysComponentModule } from './components/public-holidays/public-holidays.component-module';
 import { HolidaysServiceModule } from './services/holidays.service-module';
+import {CategoriesServiceModule} from "./services/categories.service-module";
 
 @NgModule({
   imports: [RouterModule.forRoot([{ path: 'products', component: ProductListComponent },
     { path: 'categories', component: CategoryComponent }, { path: 'crypto', component: SymbolssComponent },
     { path: 'public-holidays', component: PublicHolidaysComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryComponentModule,
-    SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule],
+    SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
