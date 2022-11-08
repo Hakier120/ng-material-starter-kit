@@ -8,6 +8,8 @@ import {CategoriesCheckboxComponent} from './components/categories-checkbox/cate
 import {CategoriesMenuComponent} from './components/categories-menu/categories-menu.component';
 import {ProductFormComponent} from './components/product-form/product-form.component';
 import {CreateEmployeeComponent} from './components/create-employee/create-employee.component';
+import {LoginFormComponent} from './components/login-form/login-form.component';
+import {RegisterFormComponent} from './components/register-form/register-form.component';
 import {ProductListComponentModule} from './components/product-list/product-list.component-module';
 import {ProductsServiceModule} from './services/products.service-module';
 import {CategoryComponentModule} from './components/category/category.component-module';
@@ -22,6 +24,11 @@ import {ProductFormComponentModule} from './components/product-form/product-form
 import {NewProductServiceModule} from './services/newproduct.service-module';
 import {CreateEmployeeComponentModule} from './components/create-employee/create-employee.component-module';
 import {EmployeesServiceModule} from './services/employees.service-module';
+import {LoginFormComponentModule} from './components/login-form/login-form.component-module';
+import {LoginServiceModule} from './services/login.service-module';
+import {ProductCategoriesServiceModule} from './services/product-categories.service-module';
+import {RegisterFormComponentModule} from './components/register-form/register-form.component-module';
+import {RegistersServiceModule} from './services/registers.service-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{path: 'products', component: ProductListComponent}, {
@@ -36,10 +43,14 @@ import {EmployeesServiceModule} from './services/employees.service-module';
   }, {path: 'create-product', component: ProductFormComponent}, {
     path: 'create-employee',
     component: CreateEmployeeComponent
+  }, {path: 'login', component: LoginFormComponent}, {
+    path: 'register',
+    component: RegisterFormComponent
   }]), ProductListComponentModule, ProductsServiceModule, CategoryComponentModule, SymbolssComponentModule,
     SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule,
     CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, NewProductServiceModule,
-    CreateEmployeeComponentModule, EmployeesServiceModule],
+    CreateEmployeeComponentModule, EmployeesServiceModule, LoginFormComponentModule, LoginServiceModule,
+    ProductCategoriesServiceModule, RegisterFormComponentModule, RegistersServiceModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
