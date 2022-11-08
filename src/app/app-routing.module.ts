@@ -4,6 +4,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CategoryComponent } from './components/category/category.component';
 import { SymbolssComponent } from './components/symbolss/symbolss.component';
 import { PublicHolidaysComponent } from './components/public-holidays/public-holidays.component';
+import { CategoriesCheckboxComponent } from './components/categories-checkbox/categories-checkbox.component';
 import { ProductListComponentModule } from './components/product-list/product-list.component-module';
 import { ProductsServiceModule } from './services/products.service-module';
 import { CategoryComponentModule } from './components/category/category.component-module';
@@ -11,13 +12,16 @@ import { SymbolssComponentModule } from './components/symbolss/symbolss.componen
 import { SymbolsServiceModule } from './services/symbols.service-module';
 import { PublicHolidaysComponentModule } from './components/public-holidays/public-holidays.component-module';
 import { HolidaysServiceModule } from './services/holidays.service-module';
-import {CategoriesServiceModule} from "./services/categories.service-module";
+import { CategoriesServiceModule } from './services/categories.service-module';
+import { CategoriesCheckboxComponentModule } from './components/categories-checkbox/categories-checkbox.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{ path: 'products', component: ProductListComponent },
     { path: 'categories', component: CategoryComponent }, { path: 'crypto', component: SymbolssComponent },
-    { path: 'public-holidays', component: PublicHolidaysComponent }]), ProductListComponentModule, ProductsServiceModule, CategoryComponentModule,
-    SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule],
+    { path: 'public-holidays', component: PublicHolidaysComponent }, { path: 'checkbox-categories', component: CategoriesCheckboxComponent }]),
+    ProductListComponentModule, ProductsServiceModule, CategoryComponentModule, SymbolssComponentModule,
+    SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule,
+    CategoriesCheckboxComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
