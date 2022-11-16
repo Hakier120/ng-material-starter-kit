@@ -72,10 +72,15 @@
     "content": {
       "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container>",
       "content": "$content$"
+
     },
     "text": {
       "container": "<ng-container *ngIf=\"$detailVariable$ | async as $itemVariable$\">$content$</ng-container>",
       "content": "{{ $itemVariable$ }}"
+    },
+    "dam-layout": {
+      "container": "<div *ngIf=\"$detailVariable$ | async as $itemVariable$\"><span>$content$</span></div>",
+      "content": "<h1>{{ $itemVariable$ }}</h1>"
     }
   }
 }
