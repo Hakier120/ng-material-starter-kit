@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { ProductListComponent } from './product-list.component';
+import { AdvancedEmployeeListComponent } from './advanced-employee-list.component';
 
 @NgModule({
   imports: [MatCardModule, MatListModule, CommonModule],
-  declarations: [ProductListComponent],
+  declarations: [AdvancedEmployeeListComponent],
   providers: [],
-  exports: [ProductListComponent]
+  exports: [AdvancedEmployeeListComponent]
 })
-export class ProductListComponentModule {
+export class AdvancedEmployeeListComponentModule {
 }
