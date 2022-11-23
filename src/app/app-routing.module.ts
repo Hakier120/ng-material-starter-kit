@@ -21,6 +21,7 @@ import {
 } from './components/new-filtered-product-list/new-filtered-product-list.component';
 import {SortedProductListComponent} from './components/sorted-product-list/sorted-product-list.component';
 import {AdvancedEmployeeListComponent} from './components/advanced-employee-list/advanced-employee-list.component';
+import {ProductListComponent} from './components/product-list/product-list.component';
 import {ProductsServiceModule} from './services/products.service-module';
 import {CategoryComponentModule} from './components/category/category.component-module';
 import {SymbolssComponentModule} from './components/symbolss/symbolss.component-module';
@@ -63,6 +64,7 @@ import {
   AdvancedEmployeeListComponentModule
 } from './components/advanced-employee-list/advanced-employee-list.component-module';
 import {AdvancedEmployeeServiceModule} from './services/advanced-employee.service-module';
+import {ProductListComponentModule} from './components/product-list/product-list.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{path: 'categories', component: CategoryComponent}, {
@@ -92,10 +94,10 @@ import {AdvancedEmployeeServiceModule} from './services/advanced-employee.servic
   }, {path: 'products', component: NewFilteredProductListComponent}, {
     path: 'sorted-products',
     component: SortedProductListComponent
-  }, {
-    path: 'advanced-employee',
-    component: AdvancedEmployeeListComponent
-  }]), ProductsServiceModule, CategoryComponentModule, SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, NewProductServiceModule, CreateEmployeeComponentModule, EmployeesServiceModule, LoginFormComponentModule, LoginServiceModule, ProductCategoriesServiceModule, RegisterFormComponentModule, RegistersServiceModule, CatFactComponentModule, CatServiceModule, AgePredictionComponentModule, AgeServiceModule, DetailsComponentModule, DetailsServiceModule, CartListComponentModule, CartServiceModule, UserDetailsComponentModule, UserServiceModule, NewServiceModule, UserDetComponentModule, FilteredProductListComponentModule, NewCategoriesServiceModule, NewFilteredProductListComponentModule, SortedProductListComponentModule, AdvancedEmployeeListComponentModule, AdvancedEmployeeServiceModule],
+  }, {path: 'advanced-employee', component: AdvancedEmployeeListComponent}, {
+    path: 'newer-product',
+    component: ProductListComponent
+  }]), ProductsServiceModule, CategoryComponentModule, SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, NewProductServiceModule, CreateEmployeeComponentModule, EmployeesServiceModule, LoginFormComponentModule, LoginServiceModule, ProductCategoriesServiceModule, RegisterFormComponentModule, RegistersServiceModule, CatFactComponentModule, CatServiceModule, AgePredictionComponentModule, AgeServiceModule, DetailsComponentModule, DetailsServiceModule, CartListComponentModule, CartServiceModule, UserDetailsComponentModule, UserServiceModule, NewServiceModule, UserDetComponentModule, FilteredProductListComponentModule, NewCategoriesServiceModule, NewFilteredProductListComponentModule, SortedProductListComponentModule, AdvancedEmployeeListComponentModule, AdvancedEmployeeServiceModule, ProductListComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
