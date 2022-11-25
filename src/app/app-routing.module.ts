@@ -22,6 +22,9 @@ import {
 import {SortedProductListComponent} from './components/sorted-product-list/sorted-product-list.component';
 import {AdvancedEmployeeListComponent} from './components/advanced-employee-list/advanced-employee-list.component';
 import {ProductListComponent} from './components/product-list/product-list.component';
+import {RefreshEmployeesComponent} from './components/refresh-employees/refresh-employees.component';
+import {NewProductListComponent} from './components/new-product-list/new-product-list.component';
+import {NewAddProductComponent} from './components/new-add-product/new-add-product.component';
 import {ProductsServiceModule} from './services/products.service-module';
 import {CategoryComponentModule} from './components/category/category.component-module';
 import {SymbolssComponentModule} from './components/symbolss/symbolss.component-module';
@@ -65,6 +68,9 @@ import {
 } from './components/advanced-employee-list/advanced-employee-list.component-module';
 import {AdvancedEmployeeServiceModule} from './services/advanced-employee.service-module';
 import {ProductListComponentModule} from './components/product-list/product-list.component-module';
+import {RefreshEmployeesComponentModule} from './components/refresh-employees/refresh-employees.component-module';
+import {NewProductListComponentModule} from './components/new-product-list/new-product-list.component-module';
+import {NewAddProductComponentModule} from './components/new-add-product/new-add-product.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{path: 'categories', component: CategoryComponent}, {
@@ -95,9 +101,15 @@ import {ProductListComponentModule} from './components/product-list/product-list
     path: 'sorted-products',
     component: SortedProductListComponent
   }, {path: 'advanced-employee', component: AdvancedEmployeeListComponent}, {
-    path: 'newer-product',
+    path: 'refresh-products',
     component: ProductListComponent
-  }]), ProductsServiceModule, CategoryComponentModule, SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, NewProductServiceModule, CreateEmployeeComponentModule, EmployeesServiceModule, LoginFormComponentModule, LoginServiceModule, ProductCategoriesServiceModule, RegisterFormComponentModule, RegistersServiceModule, CatFactComponentModule, CatServiceModule, AgePredictionComponentModule, AgeServiceModule, DetailsComponentModule, DetailsServiceModule, CartListComponentModule, CartServiceModule, UserDetailsComponentModule, UserServiceModule, NewServiceModule, UserDetComponentModule, FilteredProductListComponentModule, NewCategoriesServiceModule, NewFilteredProductListComponentModule, SortedProductListComponentModule, AdvancedEmployeeListComponentModule, AdvancedEmployeeServiceModule, ProductListComponentModule],
+  }, {path: 'refresh-employees', component: RefreshEmployeesComponent}, {
+    path: 'new-product-list',
+    component: NewProductListComponent
+  }, {
+    path: 'new-add-product/:id',
+    component: NewAddProductComponent
+  }]), ProductsServiceModule, CategoryComponentModule, SymbolssComponentModule, SymbolsServiceModule, PublicHolidaysComponentModule, HolidaysServiceModule, CategoriesServiceModule, CategoriesCheckboxComponentModule, CategoriesMenuComponentModule, ProductFormComponentModule, NewProductServiceModule, CreateEmployeeComponentModule, EmployeesServiceModule, LoginFormComponentModule, LoginServiceModule, ProductCategoriesServiceModule, RegisterFormComponentModule, RegistersServiceModule, CatFactComponentModule, CatServiceModule, AgePredictionComponentModule, AgeServiceModule, DetailsComponentModule, DetailsServiceModule, CartListComponentModule, CartServiceModule, UserDetailsComponentModule, UserServiceModule, NewServiceModule, UserDetComponentModule, FilteredProductListComponentModule, NewCategoriesServiceModule, NewFilteredProductListComponentModule, SortedProductListComponentModule, AdvancedEmployeeListComponentModule, AdvancedEmployeeServiceModule, ProductListComponentModule, RefreshEmployeesComponentModule, NewProductListComponentModule, NewAddProductComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
