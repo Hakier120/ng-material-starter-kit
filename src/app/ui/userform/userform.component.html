@@ -1,0 +1,43 @@
+<div>
+  <!-- Jumbotron -->
+  <div
+    class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+    style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
+height: 840px;"
+  >
+    <div class="">
+      <h1 class="mb-3 h2">Add your new employee here!</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div>
+        <form [formGroup]="userForm" (ngSubmit)="OnButtonClicked(userForm.value)">
+          <input type="text" formControlName="email" placeholder="Email">
+          <input type="text" formControlName="age" placeholder="Age">
+          <input type="text" formControlName="name" placeholder="Name">
+          <input type="text" formControlName="salary" placeholder="Salary">
+          <input type="submit" [disabled]="userForm.invalid" value="Submit">
+
+        </form>
+      </div>
+    </div>
+    <div class="row" *ngIf="userForm.valid">
+      <div>
+        <h1 style="padding: 10px">Your new employee: {{ userForm.value.name }}</h1>
+      </div>
+      <div>
+        <h1 style="padding: 10px">age: {{ userForm.value.age }}</h1>
+      </div>
+      <div>
+        <h1 style="padding: 10px">Email: {{userForm.value.email }}</h1>
+      </div>
+      <div>
+        <h1 style="padding: 5px">with salary: {{ userForm.value.salary }}</h1>$
+        will be added to the system
+      </div>
+    </div>
+
+  </div>
+  <!-- Jumbotron -->
+
+
+</div>

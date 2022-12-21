@@ -1,1 +1,68 @@
+<div class="collapse" width-100 id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">Navbar</h5>
+    <span class="text-muted">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <a class="navbar-brand" href="#">Employee Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home<i class="fas fa-globe"></i> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="create-employee">Form<i class="fas fa-pen-fancy"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Aboutme">About me<i class="fas fa-info-circle"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="employee-list">List<i class="fas fa-diagnoses"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
 <router-outlet></router-outlet>
+
+<footer>
+  <section>
+    <div class="wave wave1"></div>
+    <div class="d-flex justify-content-between">
+      <div class="employee">
+        <p class="footlogo">Employee Management</p>
+      </div>
+      <div>
+        <p class="author">Author</p>
+        <a href="https://github.com/Hakier120" target="_blank"><img class="github" src="assets/github.png" alt="Author">
+        </a>
+      </div>
+      <div class="year">
+        <p class="rok">Year: 2022</p>
+      </div>
+    </div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+  </section>
+</footer>
+
+
+

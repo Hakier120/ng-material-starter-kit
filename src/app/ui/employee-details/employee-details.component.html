@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center">
+  <div>
+    <img src="assets/details.jpg"><i class="far fa-file-alt"></i>
+  </div>
+</div>
+<h1 class="dettitle">Employee Details</h1>
+id:{{ (params$ | async)?.id}}
+<br>
+name: {{ (params$ | async)?.name}}
+<div class="aboutcontainer">
+  <div class="d-flex justify-content-center">
+    <div class="col-md-6 col-lg-1">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">ID</h3>
+          <p>{{ (params$ | async)?.id}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 col-lg-1">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Name</h3>
+          <p>{{ (params$ | async)?.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

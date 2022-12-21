@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ng-material-starter-kit-acms'`, () => {
+  it(`should have as title 'lowgular-course-entry'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng-material-starter-kit-acms');
+    expect(app.title).toEqual('lowgular-course-entry');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ng-material-starter-kit-acms app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('lowgular-course-entry app is running!');
   });
 });
