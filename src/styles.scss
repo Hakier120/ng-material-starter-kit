@@ -1,239 +1,42 @@
-body {
-  background-color: mediumpurple;
-}
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
 
-.title {
-  color: black;
-  text-align: center;
-  padding: 30px;
-  font-weight: bold;
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
 
-}
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary: mat.define-palette(mat.$indigo-palette);
+$app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
-.tytuł {
-  text-align: center;
-  color: white;
-  padding: 30px;
-  font-weight: bold;
-  font-size: 30px;
-}
+// The warn palette is optional (defaults to red).
+$app-warn: mat.define-palette(mat.$red-palette);
 
-.divtitle {
-  margin: auto;
-}
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$app-theme: mat.define-light-theme((
+        color: (
+                primary: $app-primary,
+                accent: $app-accent,
+                warn: $app-warn,
+        )
+));
 
-.footer {
-  padding: 20px;
-  text-align: left;
-}
-
-.b-hover:hover {
-  color: red;
-  background-color: yellow;
-}
-
-.img-moje {
-  height: 400px;
-}
-
-.text-center {
-  color: lawngreen;
-}
-
-.angular {
-  height: 40px;
-  width: 40px;
-}
-
-.ts {
-  height: 40px;
-  width: 40px;
-}
-
-.lowgularlogo {
-  height: 40px;
-  width: 40px;
-}
-
-.javalogo {
-  height: 40px;
-  width: 60px;
-}
-
-.col {
-  background-color: darkslateblue;
-  font-size: 15px;
-}
-
-.footercontainer {
-  background-color: dimgray;
-}
-
-.employee {
-
-  padding: 20px;
-}
-
-.footimg {
-  padding: 5px;
-  height: 110px;
-  width: 250px;
-}
-
-.github {
-
-  height: 50px;
-  width: 80px;
-}
-
-.footlogo {
-  color: white;
-  font-size: x-large;
-
-
-}
-
-.author {
-  color: white;
-  font-size: x-large;
-}
-
-.rok {
-  font-size: x-large;
-  color: lightblue;
-
-}
-
-.navbar-nav {
-  background-color: darkgoldenrod;
-}
-
-.navbar-brand {
-  color: white;
-  font-family: "Century Gothic";
-}
-
-.navbar-brand:hover {
-  color: goldenrod;
-}
-
-.year {
-  padding: 70px;
-  height: 30px;
-  text-align: center;
-}
-
-.bg-primary {
-  background-color: darkslateblue;
-}
-
-.bb-hover:hover {
-  background-color: aquamarine;
-
-}
-
-.dettitle {
-  text-align: center;
-  color: black;
-
-}
-
-.homejpg {
-  height: 580px;
-  width: 700px;
-}
-
-.bbb-hover:hover {
-  background-color: aquamarine;
-}
-
-.bbbb-hover:hover {
-  background-color: aquamarine;
-}
-
-.hometitle {
-  color: white;
-  padding: 20px;
-  font-size: xxx-large;
-  font-family: Algerian;
-}
-
-.lowgularex {
-  width: 50%;
-}
-
-
-.usercontainer {
-  border-radius: 5px;
-  padding: 30px;
-}
-
-
-section {
-  position: relative;
-  width: 100%;
-  height: 20vh;
-  overflow: hidden;
-  background: dimgray;
-}
-
-
-section .wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url(assets/wave.png);
-  background-size: 500px 100px;
-}
-
-section .wave.wave1 {
-  animation: animate 30s linear infinite;
-  z-index: 1000;
-  opacity: 1;
-  animation-delay: 0s;
-  bottom: 0;
-}
-
-section .wave.wave2 {
-  animation: animate2 30s linear infinite;
-  z-index: 999;
-  opacity: 0.5;
-  animation-delay: -4s;
-  bottom: 15px;
-}
-
-section .wave.wave3 {
-  animation: animate 30s linear infinite;
-  z-index: 998;
-  opacity: 0.2;
-  animation-delay: -2s;
-  bottom: 15px;
-}
-
-section .wave.wave4 {
-  animation: animate2 30s linear infinite;
-  z-index: 997;
-  opacity: 0.7;
-  animation-delay: -2s;
-  bottom: 20px;
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 1000px;
-  }
-}
-
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($app-theme);
 
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
 
-/* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
-
-/* Importing Datepicker SCSS file. */
-@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+body {
+  margin: 0;
+}

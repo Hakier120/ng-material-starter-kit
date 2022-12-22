@@ -1,62 +1,46 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {PersonModel} from '../model/person.model';
-import {ApiResponse} from './api.response';
-import {CreateEmployeeModel} from '../model/create-employee.model';
-import {EmployeeModel} from '../model/employee.model';
-
-export interface EmployeeResponse {
-  id: string;
-  employee_name: string;
-  employee_salary: string;
-  employee_age: string;
-  profile_image: string;
-}
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
+import { EmployeeModel } from '../models/employee.model';
+import { ApiResponse } from './api.response';
+import { EmployeeResponse } from './employee.response';
 
 @Injectable()
 export class EmployeeService {
   constructor(private _httpClient: HttpClient) {
   }
 
-  getAll(): Observable<PersonModel[]> {
+  getAll(): Observable<EmployeeModel[]> {
     return this._httpClient.get<ApiResponse<EmployeeResponse[]>>('https://dummy.restapiexample.com/api/v1/employees').pipe(
-      map((response: ApiResponse<EmployeeResponse[]>): PersonModel[] => {
-        return response.data.map((employeeResponse: EmployeeResponse) => {
+      take(1),
+      map((response) => {
+        return response.data.map((employeeResponse) => {
           return {
-            name: employeeResponse.employee_name,
-            mail: employeeResponse.employee_name,
-            img: employeeResponse.profile_image,
-            personalNumber: employeeResponse.id,
+            employeeName: employeeResponse.employee_name,
+            employeeSalary: employeeResponse.employee_salary,
             id: employeeResponse.id,
+            profileImage: employeeResponse.profile_image,
+            employeeAge: employeeResponse.employee_age,
           }
-        })
-      })
-    )
-  }
-
-  delete(id: string): Observable<void> {
-    return this._httpClient.delete('https://dummy.restapiexample.com/api/v1/delete/' + id).pipe(map(() => void 0))
-
-  }
-
-  Create(employee: CreateEmployeeModel): Observable<void> {
-    return this._httpClient.post('https://dummy.restapiexample.com/api/v1/create', employee).pipe(map(() => void 0));
+        });
+      }));
   }
 
   getOne(id: string): Observable<EmployeeModel> {
-    return this._httpClient.get<ApiResponse<EmployeeResponse>>(`https://dummy.restapiexample.com/api/v1/employee/${id}`).pipe(
-      map((response): EmployeeModel => ({
-        id: response.data.id,
-        image: response.data.profile_image,
-        email: '',
-        name: response.data.employee_name,
-      }))
-    )
+    return this._httpClient.get<ApiResponse<EmployeeResponse>>('https://dummy.restapiexample.com/api/v1/employee/'+id).pipe(
+      take(1),
+      map((employeeResponse) => {
 
-  }
+          return {
+            employeeName: employeeResponse.data.employee_name,
+            employeeSalary: employeeResponse.data.employee_salary,
+            id: employeeResponse.data.id,
+            profileImage: employeeResponse.data.profile_image,
+            employeeAge: employeeResponse.data.employee_age,
+          }
+        }))
+      };
+
+
 }
-
-
-
