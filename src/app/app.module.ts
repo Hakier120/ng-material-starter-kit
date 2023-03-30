@@ -4,16 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
-import {CryptoServiceModule} from "./services/crypto.service-module";
-import {CryptoListComponentModule} from "./components/crypto-list/crypto-list.component-module";
-import {EmployeeListComponentModule} from "./components/employee-list/employee-list.component-module";
-import {EmployeeServiceModule} from "./services/employee.service-module";
-import {ProductListComponentModule} from "./components/product-list/product-list.component-module";
-import {ProductsServiceModule} from "./services/products.service-module";
-
-
-
-
+import {DogListComponentModule} from "./components/dog-list/dog-list.component-module";
+import {DogsServiceModule} from "./services/dogs.service-module";
+import {SameCityDogsServiceModule} from "./services/same-city-dogs.service-module";
+import {TestServiceModule} from "./services/test.service-module";
+import {TestComponentModule} from "./components/test/test.component-module";
 
 
 
@@ -26,16 +21,11 @@ import {ProductsServiceModule} from "./services/products.service-module";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CryptoServiceModule,
-    CryptoListComponentModule,
-    EmployeeListComponentModule,
-    EmployeeServiceModule,
-    ProductListComponentModule,
-    ProductsServiceModule
-
-
-
-
+    DogListComponentModule,
+    DogsServiceModule,
+    SameCityDogsServiceModule,
+    TestServiceModule,
+    TestComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
