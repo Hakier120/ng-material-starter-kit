@@ -1,0 +1,29 @@
+<mat-card *ngIf="dogDetails$ | async as item">
+  <mat-card-title></mat-card-title>
+  <mat-card-content *ngIf="isVisible">
+    <ng-container>
+      <h1> {{ item.id }}</h1>
+      {{item.breed}}
+      <button mat-raised-button color="warn" (click)="delete(item.id)">Remove dog</button>
+      <button mat-raised-button color="primary" (click)="close()">Close</button>
+    </ng-container>
+    <ng-container *ngFor="let similarDog of similarDog$ | async">
+      <li>
+        {{similarDog.breed}}
+      </li>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card>
+  <mat-card-title>Dog List</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of refreshedDogList$ | async">
+        {{item.breed}}
+        <button mat-raised-button color="primary" (click)="selectDog(item)">Choose Dog</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
